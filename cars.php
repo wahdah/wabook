@@ -8,13 +8,13 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              www.wahdah.my
+ * @link              www
  * @since             1.0.0
- * @package           WaBook
+ * @package           Wabook
  *
  * @wordpress-plugin
- * Plugin Name:       WaBook
- * Plugin URI:        www.wahdah.my
+ * Plugin Name:       Wabook
+ * Plugin URI:        partners.wahdah.my
  * Description:       Enjoy Free car rental service for every users. Design Your own car rental platform now and start your business. Join us now on WahdahPartner to enjoy the rental services.
  * Version:           1.0.0
  * Author:            Lenon
