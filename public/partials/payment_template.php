@@ -1,6 +1,5 @@
 <div class="row">
-   
-    <div class="col-md-4">
+   <div class="col-md-4">
          <div class="box-book-details">
             <div>
                 <img src="<?= $sale_data['image']['clean']['thumb']['http']?>" alt="">
@@ -25,8 +24,6 @@
         </div>
     </div>
     
-    
-        
         <div class="col-md-8">
 			<div>
 				<h3 class="h3 title">Summary of Rental</h3>
@@ -103,7 +100,6 @@
 			<input style="float:right" type="submit" id="btn-pay" name="submitbtn" value="Proceed To Pay" />       
 		</form>
     </div>        
-        
 </div>
   
 		

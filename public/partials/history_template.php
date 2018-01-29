@@ -1,5 +1,5 @@
 <div>
-	<table style="text-align:center">
+	<table class="table">
 		<tr>
 			<th>Car</th>
 			<th>Date</th>
@@ -8,7 +8,7 @@
 			<th>Fee (RM)</th>
 			<th>Payment Status</th>
 		</tr>
-		<?php if(!empty($sale_data)){ ?>
+		<?php if(!empty($sale_data['sales'])){ ?>
 		
 		<?php foreach($sale_data['sales'] as $sd):
 		
@@ -30,7 +30,8 @@
 				  echo '<td>Paid</td>';
 		
 		 echo '</tr>';
-		endforeach ?>
-		<?php }else{ echo'No Booking Found'; }?>
+		endforeach;
+		}
+		else{ echo'No result found'; }?>
 	</table>
 </div>

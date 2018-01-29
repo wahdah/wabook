@@ -7,10 +7,7 @@
                         <img src="<?= $vehicle_data["vehiclePartner"]['vehicle']['image']['clean']['thumb']['http'] ?>" alt="">
                     </div>
             </div>
-            
-
             <div class="col-md-7">
-                
                         <div>
                             <h3 id="carselect"><b>SELECTED CAR</b></h3>
                             <p><b><?= $vehicle_data['vehiclePartner']['vehicle']['manufacturer']['name'].' '. $vehicle_data['vehiclePartner']['vehicle']['name']. ' ('.$vehicle_data['vehiclePartner']['vehicle']['transmission'] .') '.$vehicle_data['vehiclePartner']['vehicle']['engine_size'] / 1000 ?></b></p>
@@ -30,20 +27,16 @@
                             <p id="days">for <?= $days ?> day(s)</p>
                         </div>
             </div>
-        
         </div>
     </div>
-        
-   
-        
-        
-            <h3 class="h3 title">Summary of Rental</h3>
+        <h3 class="h3 title">Summary of Rental</h3>
             <table class="table">
                 <tbody>
                     <tr>
-                        <th>Item </th>
-                        <th class="text-center">Amount&nbsp(MYR)</th>
+                        <th>Item</th>
+                        <th class="text-center">Amount (MYR)</th>
                     </tr>
+                
                     <tr>
                         <td>Rental</td>
                         <td class="text-center"><?= $rental_amount ?></td>
@@ -71,10 +64,6 @@
                     </tr>
                 </tbody>
             </table>
-
-    
-        
-        
         <div class="box summary-book">
         <form action="" method="post">
             <table class="table">
@@ -108,7 +97,6 @@
             </table>
           </div>     
            
-			
 			<input type="hidden" name="deposit_amount" value="<?= $depositAmount ?>">
 			<input type="hidden" name="deposit_amount" value="<?= $depositAmount ?>">
 			<input type="hidden" name="discount_amount" value="<?= $discountAmount ?>">
@@ -126,6 +114,5 @@
 			<input type="hidden" name="total_amount" value="<?= $total ?>">
 			<input type="hidden" name="vehicle_id" value="<?= $vehicle_data['vehiclePartner']['vehicle_id'] ?>">
 			<input style="float:right" type="submit" id="ibutton" name="submitbtn" value="Next" />
-           
         </form>
          

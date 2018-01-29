@@ -38,5 +38,10 @@
 						<?php foreach($search_location as $s):
 	 echo '<option>'.$s->name .'</option>';
 	endforeach ?>
-				  </select></div>
-	</form></div></div></div>
+
+    </select>
+       </div>
+	</form>
+        </div>
+    </div>
+</div>

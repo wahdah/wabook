@@ -9,6 +9,11 @@ p {
     margin: none; !important;
 }
 
+.btn {
+    transition: 0.1s ease; !important;
+    padding: 8px 14px; !important;
+}
+
 h3.title {
     
     padding-top: 0px;
@@ -53,6 +58,12 @@ h3.title {
     background-color: #e04627;
     border-color: #fff;
     float: right;
+}
+
+.btn-carlist:hover {
+    
+    color: #fff; !important;
+	box-shadow:none; !important;
 }
 
 #btn-pay {
@@ -159,7 +170,6 @@ h3.title {
 {
     color: #fff;
 	background-color:#df2917;
-    box-shadow: 0px 2px 0px 0px #B22C1E;
 }
 
 #datepick

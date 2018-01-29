@@ -262,28 +262,22 @@ class Cars {
 					default:
 
 						$deposit = sprintf('%0.2f', round($wpdb->get_var("SELECT deposit FROM wp_wahdah_setup"), 2));
-						$bankname = $wpdb->get_var("SELECT bankname FROM wp_wahdah_setup");
-						$bankaccount = $wpdb->get_var("SELECT bankaccount FROM wp_wahdah_setup");
-						$accountname = $wpdb->get_var("SELECT accountname FROM wp_wahdah_setup");
+						$token = $wpdb->get_var("SELECT token FROM wp_wahdah_setup");
 						
 						if(!empty($_POST))
 						{	
 							$deposit = $_POST['deposit'];
-							$bankname = $_POST['bankname'];
-							$bankaccount = $_POST['bankaccount'];
-							$accountname = $_POST['accountname'];
+							$token = $_POST['token'];
 							
 							$table_name = $wpdb->prefix . "wahdah_setup";	
 							$wpdb->update( 
 								$table_name, 
 									array( 
 										'deposit' => $deposit,
-										'bankname' => $bankname,
-										'bankaccount' => $bankaccount,
-										'accountname' => $accountname,
+										'token' => $token,
 									  ), 
 									array('id' => 1), 
-									array('%f','%s','%s','%s'), 
+									array('%f','%s'), 
 									array('%d')); 
 									
 							echo "<script type='text/javascript'>

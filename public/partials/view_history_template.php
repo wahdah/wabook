@@ -62,50 +62,51 @@
 			</div> 
 		<h3 class="h3 title">Customer Details</h3>
             <div class="summaryhistory">
-				<table>
+				<table class="table table-bordered">
 					<tr>
 						<td><b>Name</b></td>
-						<td class="text-center"><?= $sale_data['sale']['name'] ?></td>
+						<td class="text-left"><?= $sale_data['sale']['name'] ?></td>
 					</tr>
 					<tr>
 						<td><b>Email</b></td>
-						<td class="text-center"><?= $sale_data['sale']['email'] ?></td>
+						<td class="text-left"><?= $sale_data['sale']['email'] ?></td>
 					</tr>
 					<tr>
                         <td><b>Address</b></td>
-						<td class="text-center"><?= $sale_data['sale']['address'] ?></td>
+						<td class="text-left"><?= $sale_data['sale']['address'] ?></td>
 					</tr>
 					<tr>
 						<td><b>IC Number</b></td>
-						<td class="text-center"><?= $sale_data['sale']['ic_no'] ?></td>
+						<td class="text-left"><?= $sale_data['sale']['ic_no'] ?></td>
 					</tr>
 					<tr>
 						<td><b>Mobile Number</b></td>
-						<td class="text-center"><?= $sale_data['sale']['mobile_number'] ?></td>
+						<td class="text-left"><?= $sale_data['sale']['mobile_number'] ?></td>
 					</tr>
 					<tr>
 						<td><b>Note</b></td>
-						<td class="text-center"><?= $sale_data['sale']['note'] ?></td>
+						<td class="text-left"><?= $sale_data['sale']['note'] ?></td>
 					</tr>
 				</table>
         </div>
+    <h3 class="h3 title">Payment Method</h3>
+            <div class="summaryhistory">
 			<form action="" method="post">
 			<?php if($sale_data['sale']['payment_status'] == '0'): ?>
-			<div style="height:100px;">
-				<h3 class="h3 title">Payment Method</h3><hr>
+			<div>
 				<label for="paypal"><input type="radio" id="paypal" name="paymentmethod" value="1" checked />Paypal</label>
 				<label for="cod"><input type="radio" id="cod" name="paymentmethod" value="2" />COD (Cash On Delivery)</label>
 			</div>
 			<div style="float:right">
-                <input type="submit" name="backbtn" value="Back" />
+                <input type="submit" id="ibutton" name="backbtn" value="Back" />
 				<input id="btn-pay" type="submit" name="paybtn" value="Proceed To Pay" />
 			</div>
 		
 		<?php 
 			else:			
 				echo'<div style="height:100px;"><h3>Payment Method</h3><b><p>'.$sale_data['sale']['payment_method'].'</p></b></div>';
-				echo '<div style="float:right"><input class="btn-carlist" type="submit" name="backbtn" value="Back" /></div>';
+				echo '<div style="float:right"><input id="ibutton" type="submit" name="backbtn" value="Back" /></div>';
 			endif;
 			 ?>
 			</form>	
-	
+	   </div>

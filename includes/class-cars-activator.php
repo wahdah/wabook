@@ -41,9 +41,7 @@ class Cars_Activator {
 			$sql = "CREATE TABLE $table_name (
 							id mediumint(9) NOT NULL AUTO_INCREMENT,
 							deposit float(11) NOT NULL,
-							bankname varchar(200) DEFAULT '' NOT NULL,
-							bankaccount varchar(200) DEFAULT '' NOT NULL,
-							accountname varchar(200) DEFAULT '' NOT NULL,
+							token varchar(300) DEFAULT '' NOT NULL,
 							PRIMARY KEY  (id)
 							) $charset_collate;";
 
@@ -54,9 +52,7 @@ class Cars_Activator {
 				$table_name, 
 				array(
 					'deposit' => 300.00,
-					'bankname' => '',
-					'bankaccount' => '',
-					'accountname' => '',
+					'token' => '',
 					
 				) 
 			);
