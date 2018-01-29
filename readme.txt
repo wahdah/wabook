@@ -12,16 +12,14 @@ Stable tag:        4.9
 Version:           1.0
 
 == Description ==
-# Wabook
-Car Rental Wordpress Plugin for <a href="https://partners.wahdah.my/">Wahdah Partner</a> System. 
+Wabook
+Car Rental Wordpress Plugin for Wahdah Partner System. 
 
 == Installation ==
-## Installing
 1. Download the wabook plugin into your wordpress plugin directory (wp-content/plugins).
 2. Enable in the WordPress admin
 
 == Screenshots ==
-![Screenshot](home.png)
 
 == Changelog ==
 
