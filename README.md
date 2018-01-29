@@ -14,3 +14,5 @@ Being a will be able to enjoy the feature of having your own car rental website.
 * Able to manage the rental location and booking deposit.
 * Login, customer are able to view their booking history or complete the payment of booking which they have miss out.
 * Flexible payment method which you may choose either through Paypal, Bank Transfer, Cash on Delivery(COD) or All of the methods to exists in your website.
+
+![Screenshot](home.png)
