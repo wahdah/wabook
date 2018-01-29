@@ -1,0 +1,624 @@
+body {
+    
+    
+    font-size: 16px !important;
+}
+
+p {
+    
+    margin: none; !important;
+}
+
+h3.title {
+    
+    padding-top: 0px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #e04627; 
+}
+
+.box-book-details {
+    
+    background-color: #fff;
+    border: 1px solid #E0E0E2;
+    box-shadow: 0 0 1px #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    
+}
+
+.box {
+    
+    background-color: transparent;
+    border: 1px solid #e04627;
+    box-shadow: 0 0 1px #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    
+}
+
+.card-vehicle {
+    
+    box-shadow: inset 0 0 0 1px #808080;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.btn-carlist {
+   
+    color: #fff;
+    background-color: #e04627;
+    border-color: #fff;
+    float: right;
+}
+
+#btn-pay {
+    
+    color: #e04627;
+    width: 160px;
+    display: inline;
+    margin: 4px;
+    height: 45px;
+    border: 1px solid #e04627;
+    border-radius: 5px;
+    background-color: #fff;
+    
+}
+
+#btn-pay:hover
+{
+    color: #fff;
+	background-color:#e04627;
+}
+
+.offline-pay {
+    
+    background-color:#C1FDF6;
+    border: 1px solid #E0E0E2;
+    border-radius:10px;
+    box-shadow: 0 0 1px #ccc;
+    padding:25px 5px 25px 15px;
+    margin-bottom: 20px;
+}
+
+
+#container2
+{
+	
+    text-align:center;
+}
+
+.menubar
+{   
+    text-align: left;
+    margin-right: 5px;
+}
+
+
+#nav
+{ 
+    background: #e04627;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    text-align: center;
+    width: 100px;
+
+} 
+
+#prev
+{
+	opacity:0.6;
+}
+
+  
+.searchbar
+{
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding:20px 50px 10px;
+	border-top:3px solid #e04627;
+    text-align: left;
+	position: relative;
+	z-index: 1;
+    margin-left:0px;
+}
+
+.right
+{
+    margin-right: 4px;
+    border-radius: 0 2px 2px 0;
+    border-left: 1px solid #ddd;
+}
+
+.iwidth
+{
+	width:250px;
+	display:inline-block;
+	margin-right:3px;
+	height:45px;
+}
+
+#ibutton
+{
+    color: #fff;
+    width:100px;
+	display:inline;
+	margin:10px;
+	height:45px;
+    border: 1px solid #fff;
+	border-radius:5px;
+	background-color:#e04627;
+}
+
+#ibutton:hover
+{
+    color: #fff;
+	background-color:#df2917;
+    box-shadow: 0px 2px 0px 0px #B22C1E;
+}
+
+#datepick
+{
+	width:180px;
+	display:inline-block;
+    vertical-align: middle;
+	margin-left:0px;
+	height:45px;
+}
+
+#dateend
+{
+    width:180px;
+	display:inline-block;
+    vertical-align: middle;
+	margin-left:0px;
+	height:45px;  
+}
+
+#hdatepick
+{
+	width:105px;
+	display:inline-block;
+    vertical-align: middle;
+	margin-left:0px;
+	height:45px;
+}
+
+#hdateend
+{
+    width:105px;
+	display:inline-block;
+    vertical-align: middle;
+	margin-left:0px;
+	height:45px;  
+}
+
+#stime,#etime
+{
+	width:180px;
+	display:inline-block;
+    vertical-align: middle;
+	margin:-8px;
+	height:45px;
+	color: transparent;
+	text-shadow: 0 0 0 gray;
+}
+#stime:hover,#etime:hover
+{
+	cursor:pointer
+}
+#stime:focus,#etime:focus
+{
+	outline: none;
+}
+
+
+
+#hstime,#hetime
+{
+	width:105px;
+	display:inline-block;
+    vertical-align: middle;
+	margin:-8px;
+	height:45px;
+	color: transparent;
+	text-shadow: 0 0 0 gray;
+}
+#hstime:hover,#hetime:hover
+{
+	cursor:pointer
+}
+#hstime:focus,#hetime:focus
+{
+	outline: none;
+}
+
+
+
+#aswidth
+{
+	width:130px;
+	font-size:0.9em;
+	display:inline;
+	margin:4px;
+	height:45px;
+	opacity:0.6;
+	background:#5a1fef;
+}
+
+.wrap_search
+{
+	border-radius:1px;
+	padding: 5px 5px 5px 5px;
+	
+}
+
+.car-container
+{
+	background-color: #fff;
+	
+	border:1px solid #E0E0E2;
+    box-shadow: 0 0 10px #ccc;
+	margin-bottom:40px;
+	border-radius:4px;
+    overflow: hidden;
+
+}
+
+.car-container h3
+{
+	 padding:0 0 0 2px;
+	 margin:10px 0 0 4px;
+	 color:red;
+	 float:left;
+	 font-size:20px;
+}
+
+#price
+{
+	 font-weight:550;
+}
+
+#myr
+{
+    font-weight:500;
+}
+
+a.book
+{
+	 padding:8px;
+	 float:right;
+	 margin:6px 8px 4px 0;
+	 font-size:1em;
+	 text-decoration:none;
+	 border:2px solid brown;
+	 border-radius:5px;
+	 color:brown;
+	 font-weight:550;
+	 font-size:0.9em;
+}
+
+a.book:hover
+{
+	 background-color:#fcdeb0;
+}
+
+.car-container p, .car-container img
+{
+	 padding:0;
+	 margin-bottom:4px;
+}
+
+.searchbarbox
+{
+    width: 25em;
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding:20px;
+	border:1px solid red;
+    border-radius: 2px;
+    text-align: left;
+	position: relative;
+	z-index: 1;
+    margin-left: 0px;
+}
+.searchbarbox label
+{
+    font-weight:bold;
+    float:left;
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+}
+.box_location
+{
+	width:360px;
+	display:inline;
+	margin-left:0px;
+	height:45px;
+	cursor: pointer;
+	text-align-last:center;
+}
+
+#ibuttonbox
+{
+    color: #fff;
+    width:230px;
+	display:inline-block;
+	margin:4px;
+	height:45px;
+    border: 1px solid #e04627;
+	border-radius:5px;
+	background-color:#e04627;
+}
+
+#ibuttonbox:hover
+{
+    color:#000;
+	background-color:#c73416;
+}
+
+.dCenter
+{
+    display: inline-block;
+    margin: 10px 0 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.pricebox
+{
+   
+    display: block;
+    margin-top:15px;
+    border-top: 1px solid #dadada;
+	text-align:left;
+	padding:15px;
+	background-color:white;
+    overflow: hidden;
+}
+
+.tabledisplay
+{
+	border:1px solid #808080;
+	border-radius:1px;
+	width:100%;
+	padding:7px;
+}
+
+#location
+{
+	padding-top:0;
+	text-transform:none;
+	letter-spacing:0;
+	display:inline;
+	float:left;
+	margin:0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #e04627;
+}
+
+#carselect
+{
+	border:5px solid #e04627;
+    border-radius: 5px;
+	background:#e04627;
+	color:white;
+	padding-top: 5px;
+    padding-bottom: 5px;
+	font-size: 14px;
+    text-align: center;
+	width:160px;
+}
+
+.tabledisplay td
+{
+	padding:7px 7px 7px 0;
+}
+
+#days
+{ 
+	display:inline-block;
+	font-style:italic;
+	font-size:0.95em;
+    margin-bottom: 10px;
+}
+
+h3.pricedis
+{ 
+	padding:5px 5px 5px 0;
+	display:inline;
+	float:left;
+	margin:0 5px 0 0;
+}
+
+#block_display
+{
+	display:inline-block;
+	margin: 0 15px 0 0;
+	padding:10px 20px 5px 15px;
+}
+
+.loader{
+	border: 5px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 5px solid #3498db;
+	width: 25px;
+	height:25px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	padding:0;
+	margin:0;
+	float:right;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: right;
+  background: #eee;
+  border-bottom: 1px solid #fff;
+  border-radius: 3px;    
+}
+
+nav li {
+  float: left;          
+}
+
+nav #login {
+  border-right: 1px solid #ddd;
+  box-shadow: 1px 0 0 #fff;  
+}
+
+nav #login-trigger,
+nav #signup a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 #fff; 
+}
+
+nav #signup a {
+  border-radius: 0 3px 3px 0;
+}
+
+nav #login-trigger {
+  border-radius: 3px 0 0 3px;
+}
+
+nav #login-trigger:hover,
+nav #login .active,
+nav #signup a:hover {
+  background: #fff;
+}
+
+nav #login-content {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  z-index: 999;    
+  background: #fff;
+  background-image: linear-gradient(top, #fff, #eee);  
+  padding: 15px;
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+  border-radius: 3px 0 3px 3px;
+}
+
+nav li #login-content {
+  right: 0;
+  width: 250px;  
+}
+
+/*--------------------*/
+
+#inputs input {
+  background: #f1f1f1;
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 238px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #ccc inset;
+}
+
+#inputs input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+/*--------------------*/
+
+#login #actions {
+  margin: 10px 0 0 0;
+}
+
+#login #submit {    
+  background-color: #d14545;
+  background-image: linear-gradient(top, #e97171, #d14545);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid #7e1515;
+  float: left;
+  height: 30px;
+  padding: 0;
+  width: 100px;
+  cursor: pointer;
+  font: bold 14px Arial, Helvetica;
+  color: #fff;
+}
+
+#login #submit:hover,
+#login #submit:focus {    
+  background-color: #e97171;
+  background-image: linear-gradient(top, #d14545, #e97171);
+} 
+
+#login #submit:active {   
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+}
+
+#login #submit::-moz-focus-inner {
+  border: none;
+}
+
+#login label
+{
+  float: right;
+  line-height: 30px;
+}
+
+#login label input 
+{
+  position: relative;
+  top: 2px;
+  right: 2px;
+}
+
+.carsearchpad 
+{
+    padding-left: 10px;
+}
+
+.summaryhistory
+{
+    font-size: 0.85em;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 1px #ccc;
+    padding: 10px 10px 0px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
