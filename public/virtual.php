@@ -20,6 +20,10 @@ class FakePages {
             'title'   => 'Payment',
             'content' => '[payment]'
         );
+		$fake_pages['transfer'] = array(
+            'title'   => 'Transfer',
+            'content' => '[offline_pay]'
+        );
 		 $fake_pages['history'] = array(
             'title'   => 'History',
             'content' => '[booklist]'

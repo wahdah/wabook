@@ -1,6 +1,6 @@
 <?php
 function get_details() {
-	global $sale_data,$days,$vehicle_data;
+	global $sale_data,$days,$vehicle_data,$payapi;
 	
     if(!empty($_GET))
 	{
@@ -13,6 +13,10 @@ function get_details() {
     	// Open the file using the HTTP headers set above
     	$sales = file_get_contents('https://api.wahdah.my/partner/sales/view/'.$salesID.'.json', false, $context);
     	$sale_data = json_decode($sales, true);
+		
+		//payment api
+		//$payment_api = file_get_contents('https://api.wahdah.my/partner/vehicles.json', false, $context);
+		//$payapi = json_decode($payment_api, true);
 		
 		
 		$pickupDate = new DateTime(str_replace("T"," ",$sale_data['sale']['start']));
@@ -36,6 +40,13 @@ function get_details() {
 		{	
 			wp_redirect("http://www.wahdah.my/partner/payment/paypal/". $salesID);
 		}
+		if($paymethod == '2')
+		{	
+			$arr_params = array( 
+					'id' => encrypt_decrypt('encrypt',$salesID),
+				);
+			wp_redirect(esc_url(add_query_arg($arr_params,home_url('/transfer/')) ));
+		}
 		else
 		{
 			$arr_params = array( 
@@ -52,8 +63,8 @@ function get_details() {
 function payment_shortcode() {
     ob_start();
 	get_details();
-	global $sale_data,$days,$vehicle_data;
-	
+	global $sale_data,$days,$vehicle_data,$payapi;
+	$payapi = array('2','3');
 	if(!empty($sale_data))
 	{    
 		include( dirname( __FILE__ ) . '/partials/payment_template.php' );

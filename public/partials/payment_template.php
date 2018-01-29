@@ -94,8 +94,18 @@
                 <form action="" method="post">
 			<div style="height:100px;">
 				<h3><strong>Payment Method</strong></h3>
-				<label for="paypal"><input type="radio" id="paypal" name="paymentmethod" value="1" checked />Paypal</label>
-				<label for="cod"><input type="radio" id="cod" name="paymentmethod" value="2" />COD(Cash On Delivery)</label>
+				<?php
+				foreach($payapi as $pa):
+				if($pa == '1')
+					echo '<label for="paypal"><input type="radio" id="paypal" name="paymentmethod" value="1" checked />Paypal</label>';
+				if($pa == '2')
+					echo'<label for="trasfer"><input type="radio" id="trasfer" name="paymentmethod" value="2" />Bank Trasnfer</label>';
+				if($pa == '3')
+					echo'<label for="cod"><input type="radio" id="cod" name="paymentmethod" value="3" />COD(Cash On Delivery)</label>';
+				
+				endforeach;
+				?>
+
 			</div>
 			<input style="float:right" type="submit" id="btn-pay" name="submitbtn" value="Proceed To Pay" />       
 		</form>

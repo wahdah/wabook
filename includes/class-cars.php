@@ -311,6 +311,7 @@ class Cars {
 		include dirname(dirname( __FILE__ )) . '/public/rental.php';
 		include dirname(dirname( __FILE__ )) . '/public/login_bar.php';
 		include dirname(dirname( __FILE__ )) . '/public/details.php';
+		include dirname(dirname( __FILE__ )) . '/public/bank_transfer.php';
 		include dirname(dirname( __FILE__ )) . '/public/url_encryption.php';
 		include dirname(dirname( __FILE__ )) . '/public/payment.php';
 		include dirname(dirname( __FILE__ )) . '/public/success_payment.php';

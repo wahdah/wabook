@@ -7,9 +7,9 @@
                 <div class="offline-pay">
                     <p><b>Please Bank-in cheque / cash to the following account :</br>
                     </br>Payment / Bank Account Information</br>
-                    Name of Bank : <?= $wpdb->get_var("SELECT bankname FROM wp_wahdah_setup"); ?></br>
-                    Account Number : <span style="color:blue;font-weight:bold"><?= $wpdb->get_var("SELECT bankaccount FROM wp_wahdah_setup"); ?></span></br>
-                    Pay to : <?= $wpdb->get_var("SELECT accountname FROM wp_wahdah_setup"); ?></br></br>
+                    Name of Bank : </br>
+                    Account Number : <span style="color:blue;font-weight:bold"></span></br>
+                    Pay to : </br></br>
                     Once payment make, please screenshot or snap your receipt and fill up form below.</b></p>
                 </div>
     
@@ -33,7 +33,7 @@
                     <option value="HSBC">HSBC</option>
                 </select>
                     </p> 
-                <p>Beneficiancy Name :<input type="text" name="benefbox" size="10" style="width: 300px;" value="<?= $wpdb->get_var('SELECT accountname FROM wp_wahdah_setup'); ?>" disabled />
+                <p>Beneficiancy Name :<input type="text" name="benefbox" size="10" style="width: 300px;" value="" disabled />
                 <input type="hidden" name="benefbox" size="10" style="width: 500px;" value="Tuition Ace Sdn Bhd"  /></p>
             </div>
             

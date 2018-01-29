@@ -1,13 +1,14 @@
-=== Plugin Name ===
+=== Wabook ===
 
 Contributors:      Lenon
 Plugin Name:       Wabook
 Plugin URI:        partners.wahdah.my
-Tags:              wp, protect, php, eval, malicious, url
+Tags:              wp, protect, PHP, eval, malicious, url
 Author URI:        partners.wahdah.my
 Author:            Lenon
 Requires at least: 2.3
 Tested up to:      4.9
+Requires PHP: 5.6
 Stable tag:        4.9
 Version:           1.0
 
@@ -20,6 +21,7 @@ Car Rental Wordpress Plugin for Wahdah Partner System.
 2. Enable in the WordPress admin
 
 == Screenshots ==
+screenshot-home.(png|jpg)
 
 == Changelog ==
 
