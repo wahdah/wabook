@@ -93,20 +93,28 @@
             <div class="summaryhistory">
 			<form action="" method="post">
 			<?php if($sale_data['sale']['payment_status'] == '0'): ?>
-			<div>
-				<label for="paypal"><input type="radio" id="paypal" name="paymentmethod" value="1" checked />Paypal</label>
-				<label for="cod"><input type="radio" id="cod" name="paymentmethod" value="2" />COD (Cash On Delivery)</label>
-			</div>
-			<div style="float:right">
-                <input type="submit" id="ibutton" name="backbtn" value="Back" />
-				<input id="btn-pay" type="submit" name="paybtn" value="Proceed To Pay" />
-			</div>
+			<?php
+				if($payapi['company_profile']['payment'] !== 0)
+				{
+					if($payapi['company_profile']['paypal'] == 1)
+					{
+						if($payapi['company_profile']['paypal_enabled'] == 1)
+							echo '<label for="paypal"><input type="radio" id="paypal" name="paymentmethod" value="1" checked />Paypal</label>';
+					}
+					if($payapi['company_profile']['bank_transfer_enabled'] == 1)
+						echo'<label for="trasfer"><input type="radio" id="trasfer" name="paymentmethod" value="2" />Bank Trasnfer</label>';
+					if($payapi['company_profile']['cod_enabled'] == 1)
+						echo'<label for="cod"><input type="radio" id="cod" name="paymentmethod" value="3" />COD(Cash On Delivery)</label>';
+					
+				}
+				?>
 		
 		<?php 
 			else:			
 				echo'<div style="height:100px;"><h3>Payment Method</h3><b><p>'.$sale_data['sale']['payment_method'].'</p></b></div>';
-				echo '<div style="float:right"><input id="ibutton" type="submit" name="backbtn" value="Back" /></div>';
 			endif;
+				echo '<div style="float:right"><input id="ibutton" type="submit" name="backbtn" value="Back" /></div>';
+
 			 ?>
 			</form>	
 	   </div>

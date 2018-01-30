@@ -1,21 +1,21 @@
 <?php
 function get_book() {
 	
-	global $sale_data,$days;
+	global $sale_data,$days,$payapi;
     if(!empty($_GET))
 	{
 		require( dirname( __FILE__ ) . '/config/config.php' );
 		require( dirname( __FILE__ ) . '/config/func.php' );
 		$getOpts = getReq($token);
-
     	$context = stream_context_create($getOpts);
-
         $salesID = $_GET['bookID'];
 
     	// Open the file using the HTTP headers set above
     	$sales = file_get_contents('https://api.wahdah.my/partner/sales/view/'.$salesID.'.json', false, $context);
-
     	$sale_data = json_decode($sales, true);
+		
+		$payment_api = file_get_contents('https://api.wahdah.my/partner/company-profile.json', false, $context);
+		$payapi = json_decode($payment_api, true);
 		
 		$pickupDate = new DateTime(str_replace("T"," ",$sale_data['sale']['start']));
 		$returnDate = new DateTime(str_replace("T"," ",$sale_data['sale']['end']));
@@ -60,7 +60,7 @@ function get_book() {
 function book_details_shortcode() {
     ob_start();
 	get_book();
-	global $sale_data,$days;
+	global $sale_data,$days,$payapi;
 	$current_user = wp_get_current_user();
 	$useremail = $current_user->user_email;
 	if(!empty($sale_data))

@@ -62,8 +62,24 @@ h3.title {
 
 .btn-carlist:hover {
     
-    color: #fff; !important;
-	box-shadow:none; !important;
+    color: #fff !important;
+    background-color: #df2917;
+    webkit box-shadow: none !important;
+	box-shadow:none !important; 
+    
+}
+
+.btn-carlist:active {
+    
+    background-color: #df2917 !important;
+}
+
+.btn-carlist:focus {
+    
+    color: #fff !important;
+    background-color: #df2917;
+    webkit box-shadow: none !important;
+	box-shadow:none !important;
 }
 
 #btn-pay {
@@ -149,6 +165,7 @@ h3.title {
 .iwidth
 {
 	width:250px;
+    padding: 0.7em;
 	display:inline-block;
 	margin-right:3px;
 	height:45px;
@@ -291,6 +308,7 @@ h3.title {
 
 #price
 {
+     color: #5f5f5f;
 	 font-weight:550;
 }
 

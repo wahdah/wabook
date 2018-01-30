@@ -19,7 +19,7 @@ foreach ( $vehicle_data['vehicles'] as $v )
 					'return_date' => $_GET['return_date'],
 					'vehicleId' => $v['id']
 				);
-				$displaylist .= '<a href="'. esc_url(add_query_arg( $arr_params,home_url('/details/') )).'" class="btn btn-carlist" val="'.$v['id'].'">Book Now</a>';
+				$displaylist .= '<a href="'. esc_url(add_query_arg( $arr_params,home_url('/details/') )).'" class="btn btn-primary btn-carlist" val="'.$v['id'].'">Book Now</a>';
 				$displaylist .= '</div>';
 				$displaylist .= '</div>';
                 $displaylist .= '</div>';

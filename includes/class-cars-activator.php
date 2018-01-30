@@ -72,6 +72,24 @@ class Cars_Activator {
 			dbDelta( $sql2 );
 		}
 		
+		$table_name3 = $wpdb->prefix . 'upload';
+		if ( $wpdb->get_var( "SHOW TABLES LIKE '{$table_name3}'" ) != $table_name3 ) {
+
+			$sql3 = "CREATE TABLE $table_name3 (
+							id mediumint(9) NOT NULL AUTO_INCREMENT,
+							amount float(11) NOT NULL,
+							date date NOT NULL,
+							bank varchar(100) DEFAULT '' NOT NULL,
+							type varchar(100) DEFAULT '' NOT NULL,
+							receipt_no varchar(100) DEFAULT '' NOT NULL,
+							image varchar(100) DEFAULT '' NOT NULL,							
+							PRIMARY KEY  (id)
+							) $charset_collate;";
+
+			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+			dbDelta( $sql3 );
+		}
+		
 		if ( null === $wpdb->get_row( "SELECT post_name FROM {$wpdb->prefix}posts WHERE post_name = 'rental'", 'ARRAY_A' ) ) {
      
 			$current_user = wp_get_current_user();
