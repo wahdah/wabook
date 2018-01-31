@@ -1,5 +1,6 @@
 <div>
-	<table class="table">
+	<table class="table table-bordered">
+        <tbody>
 		<tr>
 			<th>Car</th>
 			<th>Date</th>
@@ -8,6 +9,7 @@
 			<th>Fee (RM)</th>
 			<th>Payment Status</th>
 		</tr>
+            </tbody>
 		<?php if(!empty($sale_data['sales'])){ ?>
 		
 		<?php foreach($sale_data['sales'] as $sd):
