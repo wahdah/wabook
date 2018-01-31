@@ -82,7 +82,8 @@ class Cars_Activator {
 							bank varchar(100) DEFAULT '' NOT NULL,
 							type varchar(100) DEFAULT '' NOT NULL,
 							receipt_no varchar(100) DEFAULT '' NOT NULL,
-							image varchar(100) DEFAULT '' NOT NULL,							
+							image MEDIUMBLOB DEFAULT '' NOT NULL,
+							path varchar(100) DEFAULT '' NOT NULL,								
 							PRIMARY KEY  (id)
 							) $charset_collate;";
 

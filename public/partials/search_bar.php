@@ -1,7 +1,4 @@
 <div class="wrap_search">
-	<div class="menubar">
-        		<p id="nav"><b>CAR</b></p>
-        	</div>
 	<div class="searchbar">	
 		<div class="no-gutter sm">
    <form action="<?php esc_url( $_SERVER['REQUEST_URI'] ) ?>" method="get" accept-charset="utf-8" class="form-inline" role="form">

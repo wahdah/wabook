@@ -91,7 +91,7 @@ public function add_plugin_admin_menu() {
 	
 	add_submenu_page('fee-manage','Setup','Setup','manage_options','fee-manage');
 	add_submenu_page('fee-manage','Manage Location','Manage Location','manage_options','location-manage','dashboard_control');
-	add_submenu_page('fee-manage','Pending Booking','Pending Booking','manage_options','book-list','booking_list');
+	add_submenu_page('fee-manage','Pending Booking','Pending Booking','manage_options','book-list','dashboard_control');
 }
 
 

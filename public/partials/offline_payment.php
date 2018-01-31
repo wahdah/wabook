@@ -19,9 +19,10 @@
         
         <div class="col-xs-8 col-sm-6">
             <div style="display:inline-block;">
-                <p style="font-weight:bold;width:300px;margin:0;float:left">Pay Amount (RM) :<br/><input type="text" name="amountbox" size="20" style="width: 200px;" value="" required  /></p>
+                <p style="font-weight:bold;width:300px;margin:0;float:left">Pay Amount (RM) :<br/><input type="text" name="amountbox" size="20" style="width: 200px;" value="<?= sprintf('%0.2f', round($sale_data['sale']['total_amount'], 2)) ?>" disabled /></p>
+				<input type="hidden" name="amountbox2" value="<?= sprintf('%0.2f', round($sale_data['sale']['total_amount'], 2)) ?>"/>
                 <p style="font-weight:bold;width:250px;margin:0;float:left">Transaction Date : <br/>
-				<input type="text" id="datepick" class="datepick" placeholder="Transcation Date" name="date_transaction" value="" required />
+				<input type="text" id="datepick" class="paydate" placeholder="Transcation Date" name="date_transaction" value="" required />
 				</p>
             </div>
             

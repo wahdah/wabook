@@ -103,7 +103,7 @@
 							echo '<label for="paypal"><input type="radio" id="paypal" name="paymentmethod" value="1" checked />Paypal</label>';
 					}
 					if($payapi['company_profile']['bank_transfer_enabled'] == 1)
-						echo'<label for="trasfer"><input type="radio" id="trasfer" name="paymentmethod" value="2" />Bank Trasnfer</label>';
+						echo'<label for="trasfer"><input type="radio" id="trasfer" name="paymentmethod" value="2" />Bank Transfer</label>';
 					if($payapi['company_profile']['cod_enabled'] == 1)
 						echo'<label for="cod"><input type="radio" id="cod" name="paymentmethod" value="3" />COD(Cash On Delivery)</label>';
 					

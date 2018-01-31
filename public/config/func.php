@@ -32,6 +32,21 @@
 
         return $opts;
     }
+	
+	function patchReq($token, $data){
+        $opts = array(
+            'http'=>array(
+    			'method'=>"PATCH",
+    			'header'=>
+    				"Authorization: Bearer $token\r\n" .
+    				"Accept: application/json\r\n" .
+                    "Content-Type: application/x-www-form-urlencoded",
+                'content'=> http_build_query($data)
+    		)
+    	);
+
+        return $opts;
+    }
 
     function calculate_rental_amount($days,$rate){
         if ($days <= 3) $rental_amount = bcmul($days, $rate[1], 2);

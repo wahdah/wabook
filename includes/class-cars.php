@@ -258,6 +258,30 @@ class Cars {
 							include dirname(dirname( __FILE__ )) . '/admin/partials/edit_location.php';
 						}
 						break;
+						
+						
+					case 'book-list':
+						require dirname(dirname( __FILE__ )) . '/public/config/config.php';
+						require dirname(dirname( __FILE__ )) . '/public/config/func.php';
+						$reqHead = getReq($token);
+						$context = stream_context_create($reqHead);
+							
+						// Open the file using the HTTP headers set above
+						$sales = file_get_contents('https://api.wahdah.my/partner/sales.json', false, $context);	
+						$sale_data = json_decode($sales, true);
+						if(!empty($_GET['bookID']))
+						{
+							$bookingID = $_GET['bookID'];
+							$data = $_GET['payment_status'];
+							$patchOpts = patchReq($token, $data);
+							$patchContext = stream_context_create($patchOpts);
+							$file = file_get_contents('https://api.wahdah.my/partner/sales/'.$bookingID.'.json', false, $patchContext);
+							$reqHead2 = getReq($token);
+							$context2 = stream_context_create($reqHead2);
+						}
+
+						include dirname(dirname( __FILE__ )) . '/admin/partials/pending_booking_template.php';
+						break;
 					
 					default:
 
@@ -289,13 +313,6 @@ class Cars {
 						break;
 				}
 		}
-		
-		function booking_list()
-		{
-		}
-
-
-
 	}
 
 	/**

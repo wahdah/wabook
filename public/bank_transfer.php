@@ -21,46 +21,40 @@ function payment_receipt()
 	}
 	
 	if(!empty($_POST)){
-		
-		
-		$amountbox=$_POST['amountbox'];
-		$date= date("Y:m:d", strtotime($_POST["date_transaction"]));
-		$bankname = $_POST["bankname"];
-		$benefbox = $_POST["benefbox"];
-		$tranfer = $_POST["transfer"];
-		$transaction = $_POST["transaction"];
-		$tmp_name = $_FILES["picture"]["tmp_name"];
-
-
-
-		if (!file_exists(dirname(dirname( __FILE__ )))) {
-			mkdir('receipts', 0777, true);
-		}
-
-		$FolderUrl   = dirname(dirname( __FILE__ )).'/receipts/';
-
-		if (!file_exists($FolderUrl)) {
-			mkdir($FolderUrl, 0777, true);
-		}
-
-
-		define('UPLOADS_THEME_PATH',$FolderUrl);
-
-		//insert
 		if (isset($_POST['insert'])) {
 			global $wpdb;
+			
+			$amountbox=$_POST['amountbox2'];
+			$date= date("Y:m:d", strtotime($_POST["date_transaction"]));
+			$bankname = $_POST["bankname"];
+			$benefbox = $_POST["benefbox"];
+			$tranfer = $_POST["transfer"];
+			$transaction = $_POST["transaction"];
+			$tmp_name = $_FILES["picture"]["tmp_name"];
+
+
+			$FolderUrl   = dirname(dirname( __FILE__ )).'/receipts/';
+
+			if (!file_exists($FolderUrl)) {
+				mkdir($FolderUrl, 0777, true);
+			}
+
+
+			define('UPLOADS_THEME_PATH',$FolderUrl);
+			
+			//insert
+			
 			$table_name = $wpdb->prefix . "upload";
 			$path_array = wp_upload_dir(); // normal format start
 			$file_name   =   pathinfo($tmp_name ,PATHINFO_FILENAME).time().".".pathinfo($_FILES['picture']['name'] ,PATHINFO_EXTENSION); 
 			$imgtype     =   strtolower(pathinfo($tmp_name,PATHINFO_EXTENSION));                
 			$targetpath  =   UPLOADS_THEME_PATH.''.$file_name;
-
 			move_uploaded_file($tmp_name, $targetpath );
 
 			$wpdb->insert(
 				$table_name, //table
-				array('amount' => $amountbox, 'date' => $date, 'bank' => $bankname, 'type' => $tranfer, 'receipt_no' => $transaction, 'image'=>$file_name), //data
-				array('%f', '%s', '%s', '%s', '%s', '%s')        
+				array('amount' => $amountbox, 'date' => $date, 'bank' => $bankname, 'type' => $tranfer, 'receipt_no' => $transaction, 'image'=>$file_name, 'path' => $targetpath), //data
+				array('%f', '%s', '%s', '%s', '%s', '%s', '%s')        
 			);
 			$bookid = $_GET['id'];
 			$arr_params = array( 

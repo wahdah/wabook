@@ -1,6 +1,8 @@
 <div>
-	<table class="table">
+	<table class="table table-bordered">
+        <tbody>
 		<tr>
+			<th>Reference No.</th>
 			<th>Car</th>
 			<th>Date</th>
 			<th>Pickup Location</th>
@@ -8,6 +10,7 @@
 			<th>Fee (RM)</th>
 			<th>Payment Status</th>
 		</tr>
+            </tbody>
 		<?php if(!empty($sale_data['sales'])){ ?>
 		
 		<?php foreach($sale_data['sales'] as $sd):
@@ -19,6 +22,7 @@
 						'bookID' => $sd['id']
 					);
 		 echo '<tr>
+		 <td><a href="'. add_query_arg($arr_params,home_url('/viewhistory/')) .'">'.$sd["invoice_partner"]["invoice_number"].'</a></td>
 		 <td><a href="'. add_query_arg($arr_params,home_url('/viewhistory/')) .'">' .$sd['vehicle_name'] .'</a></td> 
 		 <td style="width:190px">' .$start.' <b>TO</b> <br>' .$end .'</td>
 		 <td>' .$sd['pickup_location'] .'</td>

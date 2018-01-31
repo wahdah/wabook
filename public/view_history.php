@@ -36,15 +36,21 @@ function get_book() {
 	{
 		$paymethod = $_POST['paymentmethod'];
 		if($paymethod == '1')
-		{
+		{	
 			wp_redirect("http://www.wahdah.my/partner/payment/paypal/". $salesID);
 		}
-		else
+		if($paymethod == '2')
+		{	
+			$arr_params = array( 
+					'id' => encrypt_decrypt('encrypt',$salesID),
+				);
+			wp_redirect(esc_url(add_query_arg($arr_params,home_url('/transfer/')) ));
+		}
+		if($paymethod == '3')
 		{
 			$arr_params = array( 
-					'id' => $salesID,
+					'id' => encrypt_decrypt('encrypt',$salesID),
 				);
-				
 			wp_redirect(esc_url(add_query_arg($arr_params,home_url('/thankyou/')) ));
 		}
 	}

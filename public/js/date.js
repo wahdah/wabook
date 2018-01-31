@@ -20,6 +20,9 @@ $( ".dateend" ).flatpickr({
 	minDate : new Date().fp_incr(1)
  });
  
+$( ".paydate" ).flatpickr({
+	dateFormat: "j M Y",
+ });
 
 $('.timestart').timepicker({
 	'timeFormat': 'g:i A',
