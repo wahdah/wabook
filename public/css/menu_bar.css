@@ -145,9 +145,9 @@ h3.title {
   
 .searchbar
 {
-    display: inline-block;
-    background: rgba(255,255,255,0.1);
-    padding:20px 50px 10px;
+     display: inline-block;
+    background: rgba(53,53,53,0.05);
+    padding:15px 30px 10px;
 	border-top:3px solid #e04627;
     text-align: left;
 	position: relative;
