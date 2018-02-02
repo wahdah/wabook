@@ -18,6 +18,7 @@ function payment_receipt()
 		
 		$bankap_details = file_get_contents('https://api.wahdah.my/partner/company-profile.json', false, $context);
 		$bankapi = json_decode($bankap_details, true);
+
 	}
 	
 	if(!empty($_POST)){
@@ -38,7 +39,7 @@ function payment_receipt()
 			if (!file_exists($FolderUrl)) {
 				mkdir($FolderUrl, 0777, true);
 			}
-
+		
 
 			define('UPLOADS_THEME_PATH',$FolderUrl);
 			
@@ -47,13 +48,14 @@ function payment_receipt()
 			$table_name = $wpdb->prefix . "upload";
 			$path_array = wp_upload_dir(); // normal format start
 			$file_name   =   pathinfo($tmp_name ,PATHINFO_FILENAME).time().".".pathinfo($_FILES['picture']['name'] ,PATHINFO_EXTENSION); 
+			$pat = plugin_dir_url('wabook').'wabook/receipts/'.$file_name;
 			$imgtype     =   strtolower(pathinfo($tmp_name,PATHINFO_EXTENSION));                
 			$targetpath  =   UPLOADS_THEME_PATH.''.$file_name;
 			move_uploaded_file($tmp_name, $targetpath );
 
 			$wpdb->insert(
 				$table_name, //table
-				array('amount' => $amountbox, 'date' => $date, 'bank' => $bankname, 'type' => $tranfer, 'receipt_no' => $transaction, 'image'=>$file_name, 'path' => $targetpath), //data
+				array('amount' => $amountbox, 'date' => $date, 'bank' => $bankname, 'type' => $tranfer, 'receipt_no' => $transaction, 'image'=>$file_name, 'path' => $pat), //data
 				array('%f', '%s', '%s', '%s', '%s', '%s', '%s')        
 			);
 			$bookid = $_GET['id'];

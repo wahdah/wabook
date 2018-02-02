@@ -269,15 +269,19 @@ class Cars {
 						// Open the file using the HTTP headers set above
 						$sales = file_get_contents('https://api.wahdah.my/partner/sales.json', false, $context);	
 						$sale_data = json_decode($sales, true);
-						if(!empty($_GET['bookID']))
+						if(!empty($_POST['updatepay']))
 						{
-							$bookingID = $_GET['bookID'];
-							$data = $_GET['payment_status'];
+							$bookingID = $_POST['id'];
+							$data = $_POST;
 							$patchOpts = patchReq($token, $data);
 							$patchContext = stream_context_create($patchOpts);
 							$file = file_get_contents('https://api.wahdah.my/partner/sales/'.$bookingID.'.json', false, $patchContext);
 							$reqHead2 = getReq($token);
 							$context2 = stream_context_create($reqHead2);
+							echo"<script type='text/javascript'>
+								alert('Booking Approved');
+								window.location=document.location.href;
+								</script>";	
 						}
 
 						include dirname(dirname( __FILE__ )) . '/admin/partials/pending_booking_template.php';

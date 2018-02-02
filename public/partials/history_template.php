@@ -2,7 +2,9 @@
 	<table class="table table-bordered">
         <tbody>
 		<tr>
+		<?php if(!empty($sd["invoice_partner"]["invoice_number"])) { ?>
 			<th>Reference No.</th>
+		<?php }?>
 			<th>Car</th>
 			<th>Date</th>
 			<th>Pickup Location</th>
@@ -21,10 +23,16 @@
 		$arr_params = array( 
 						'bookID' => $sd['id']
 					);
-		 echo '<tr>
-		 <td><a href="'. add_query_arg($arr_params,home_url('/viewhistory/')) .'">'.$sd["invoice_partner"]["invoice_number"].'</a></td>
-		 <td><a href="'. add_query_arg($arr_params,home_url('/viewhistory/')) .'">' .$sd['vehicle_name'] .'</a></td> 
-		 <td style="width:190px">' .$start.' <b>TO</b> <br>' .$end .'</td>
+		echo '<tr>';
+		if(!empty($sd["invoice_partner"]["invoice_number"]))
+		{
+			echo' <td><a href="'. add_query_arg($arr_params,home_url('/viewhistory/')) .'">'.$sd["invoice_partner"]["invoice_number"].'</a></td>
+			<td>' .$sd['vehicle_name'] .'</td>';
+		}
+		else{
+			echo'<td><a href="'. add_query_arg($arr_params,home_url('/viewhistory/')) .'">' .$sd['vehicle_name'] .'</a></td>';
+		}
+		echo '<td style="width:190px">' .$start.' <b>TO</b> <br>' .$end .'</td>
 		 <td>' .$sd['pickup_location'] .'</td>
 			  <td>' .$sd['return_location'] .'</td>
 			  <td>' . sprintf('%0.2f', round($sd['rental_amount'], 2)) .'</td>';

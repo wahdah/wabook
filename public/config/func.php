@@ -36,7 +36,7 @@
 	function patchReq($token, $data){
         $opts = array(
             'http'=>array(
-    			'method'=>"PATCH",
+    			'method'=>"PUT",
     			'header'=>
     				"Authorization: Bearer $token\r\n" .
     				"Accept: application/json\r\n" .

@@ -29,11 +29,9 @@
             <div style="display:inline-block;float:left;padding-right:20px;font-weight:bold">
                 <p>From Bank :<br/> 
                 <select name="bankname" style="width: 300px;" required >
-                    <option value="Maybank">Maybank</option>
-                    <option value="CIMB">CIMB</option>
-                    <option value="PBB">PBB</option>
-                    <option value="Hong Leong">Hong Leong</option>
-                    <option value="HSBC">HSBC</option>
+                    <option value="cimb">CIMB</option>
+					<option value="may">Maybank</option>
+					
                 </select>
                 </p> 
                 <p>Beneficiancy Name :<input type="text" name="benefbox" size="10" style="width: 300px;" value="<?= $bankapi['company_profile']['account_name'] ?>" disabled />
@@ -52,7 +50,7 @@
                     <option value="Cheque Deposit">Cheque Deposit</option>
                     <option value="Cash Deposit">Cash Deposit</option>
                 </select></p>
-                <p>Transaction No/Reference No :<input type="text" name="transaction" size="20" style="width: 300px;" required /></p>
+                <input type="hidden" name="transaction" value="<?= $sale_data['sale']['id'] ?>"/>
                 </div>
                 
                 <h3 class="h3" style="font-weight:bold;">Total Fee : RM <span style="font-weight:bold;color:green"><?= sprintf('%0.2f', round($sale_data['sale']['total_amount'], 2)) ?></span></h3>
