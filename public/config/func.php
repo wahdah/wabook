@@ -58,4 +58,15 @@
 
         return $rental_amount;
     }
-?>
+
+    function wabook_ssl_options() {
+        putenv('SSL_CERT_FILE='.ABSPATH.WPINC.'/certificates/ca-bundle.crt');
+        return array(
+            'ssl' => array( 
+                'cafile' => ABSPATH.WPINC.'/certificates/ca-bundle.crt',
+                'verify_peer' => true, 'verify_peer_name' => true
+            )
+        );
+        
+    }
+

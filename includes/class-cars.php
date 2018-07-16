@@ -67,8 +67,8 @@ class Cars {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'WABOOK_VERSION' ) ) {
+			$this->version = WABOOK_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -264,17 +264,28 @@ class Cars {
 						require dirname(dirname( __FILE__ )) . '/public/config/config.php';
 						require dirname(dirname( __FILE__ )) . '/public/config/func.php';
 						$reqHead = getReq($token);
-						$context = stream_context_create($reqHead);
+
+                        $ssl_options = wabook_ssl_options();
+
+						$context = stream_context_create($reqHead, $ssl_options);
 							
 						// Open the file using the HTTP headers set above
-						$sales = file_get_contents('https://api.wahdah.my/partner/sales.json', false, $context);	
-						$sale_data = json_decode($sales, true);
+						$sales = @file_get_contents('https://api.wahdah.my/partner/sales.json', false, $context);
+                        $sale_data = array();
+
+                        if ( !is_null($sales) && $sales !== '' ) {
+                            $sales = json_decode($sales, true);
+                            if (json_last_error() === JSON_ERROR_NONE) {
+						        $sale_data = $sales;
+                            }
+                        }
+	
 						if(!empty($_POST['updatepay']))
 						{
 							$bookingID = $_POST['id'];
 							$data = $_POST;
 							$patchOpts = patchReq($token, $data);
-							$patchContext = stream_context_create($patchOpts);
+							$patchContext = stream_context_create($patchOpts, $ssl_options);
 							$file = file_get_contents('https://api.wahdah.my/partner/sales/'.$bookingID.'.json', false, $patchContext);
 							$reqHead2 = getReq($token);
 							$context2 = stream_context_create($reqHead2);
